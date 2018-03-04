@@ -1,0 +1,38 @@
+CREATE TABLE `student_db`.`student_master` (
+  `student_id` INT NOT NULL,
+  `student_name` VARCHAR(45) NOT NULL,
+  `department_id` INT NOT NULL,
+  PRIMARY KEY (`student_id`));
+  
+  
+  
+  CREATE TABLE `student_db`.`department_id` (
+  `department_id` INT NOT NULL,
+  `department_name` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`department_id`));
+  
+  
+  
+  CREATE TABLE `student_db`.`course_master` (
+  `course_id` INT NOT NULL,
+  `course_name` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`course_id`));
+  
+  
+  
+  CREATE TABLE `student_db`.`roll_master` (
+  `id` INT NOT NULL,
+  `roll_number` VARCHAR(45) NOT NULL,
+  `student_id` INT NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `student_id_UNIQUE` (`student_id` ASC),
+  UNIQUE INDEX `roll_number_UNIQUE` (`roll_number` ASC));
+  
+  
+  
+  CREATE TABLE `student_db`.`student_course_map` (
+  `id` INT NOT NULL,
+  `student_id` INT NOT NULL,
+  `course_id` INT NOT NULL,
+  PRIMARY KEY (`id`));
+  

@@ -1,0 +1,8 @@
+com/rahul/hibernate/main/MasterSetUp.class
+com/rahul/hibernate/configurations/HibernateConfig.class
+com/rahul/hibernate/entity/DepartmentEntity.class
+com/rahul/hibernate/entity/CourseEntity.class
+com/rahul/hibernate/entity/StudentCourseMap.class
+com/rahul/hibernate/entity/StudentEntity.class
+com/rahul/hibernate/entity/RollNumberEntity.class
+com/rahul/hibernate/main/InsertMain.class
