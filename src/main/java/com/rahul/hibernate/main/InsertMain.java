@@ -19,7 +19,7 @@ import com.rahul.hibernate.entity.StudentEntity;
 public class InsertMain {
 	public static void main(String[] args) {
 		MasterSetUp ms = new MasterSetUp();
-		ms.initSetting();
+	//	ms.initSetting();
 		SessionFactory session = HibernateConfig.getSessionFactory();
 
 		Session con = session.openSession();
@@ -46,18 +46,19 @@ public class InsertMain {
 			StudentCourseMap studentCourseMaps = new StudentCourseMap();
 			studentCourseMaps.setCourseEntities(ce);
 			studentCourseMaps.setStudentEntity(se);
-			
+			student.setStudentCourseMaps(studentCourseMaps);
 			con.save(student);
-			con.save(studentCourseMaps);
+			//con.save(rollNumberEntity);
+			//con.save(studentCourseMaps);
 			tx.commit();
 			
 			
 			
 			
 			
-		}catch(Exception e){
-			
-		}finally {
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
 			con.close();
 		}
 

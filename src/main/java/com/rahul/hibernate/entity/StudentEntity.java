@@ -25,7 +25,6 @@ public class StudentEntity  implements Serializable{
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column(name = "student_id")
 	private int studentId;
 	@Column(name = "student_name")
 	private String studentName;
@@ -38,12 +37,12 @@ public class StudentEntity  implements Serializable{
 	private DepartmentEntity departmentEntity;
 	
 	@OneToOne(fetch = FetchType.LAZY , cascade = CascadeType.ALL)
-	@JoinColumn(name = "student_id", insertable = false , updatable = false)
+	@JoinColumn(name = "student_id",insertable = false , updatable = false)
 	private RollNumberEntity rollNumberEntity;
 	
 	
 	@ManyToOne(fetch = FetchType.LAZY , cascade = CascadeType.ALL)
-	@JoinColumn(name = "student_id", insertable = false , updatable = false)
+	@JoinColumn(name = "student_id",insertable = false , updatable = false )
 	private StudentCourseMap studentCourseMaps;
 	
 

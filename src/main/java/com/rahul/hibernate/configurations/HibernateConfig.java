@@ -19,7 +19,7 @@ public class HibernateConfig {
 	      Properties properties = new Properties();
 	      properties.put("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
 	      //log settings
-	      properties.put("hibernate.hbm2ddl.auto", "update");
+	     // properties.put("hibernate.hbm2ddl.auto", "validate");
 	      properties.put("hibernate.show_sql", "true");
 	      //driver settings
 	      properties.put("hibernate.connection.driver_class", "com.mysql.jdbc.Driver");

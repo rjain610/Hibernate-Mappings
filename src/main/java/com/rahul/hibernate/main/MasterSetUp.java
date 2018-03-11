@@ -54,6 +54,8 @@ public class MasterSetUp {
 			ce.setCourseName("Data structures");
 			CourseEntity ce2 = new CourseEntity();
 			ce2.setCourseName("Differentiation");
+			con.save(ce);
+			con.save(ce2);
 			tx.commit();
 		}catch(Exception e) {
 			tx.rollback();
@@ -68,6 +70,7 @@ public class MasterSetUp {
 		Session con = session.openSession();
 		Transaction tx = con.beginTransaction();
 		try {
+			con.createSQLQuery("truncate table student_course_map").executeUpdate();
 			con.createSQLQuery("truncate table course_master").executeUpdate();
 			tx.commit();
 		}catch(Exception e) {
